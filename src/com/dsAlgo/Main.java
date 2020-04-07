@@ -11,7 +11,9 @@ public class Main {
         linkedTreeClass.insert(3);
         linkedTreeClass.insert(4);
         linkedTreeClass.insert(7);
-       linkedTreeClass.delete(1);
+       linkedTreeClass.delete(6);
+        System.out.println("\nMin val = " +linkedTreeClass.minVal() +"\n");
+        System.out.println("\n Max val = "+ linkedTreeClass.maxVal() +"\n");
         linkedTreeClass.traverse(linkedTreeClass.getRoot());
 
 

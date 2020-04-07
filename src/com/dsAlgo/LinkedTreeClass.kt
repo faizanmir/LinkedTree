@@ -38,6 +38,7 @@ class LinkedTreeClass() : LinkedTree<Any?> {
         search((any as Int), root)
         var nodeFound = foundNode
         print("Data for found node = ${foundNode?.value}")
+        var start = System.currentTimeMillis()
         if(nodeFound == root)
         {
             root =  null
@@ -68,8 +69,8 @@ class LinkedTreeClass() : LinkedTree<Any?> {
                     child?.leftNode = nodeFound.leftNode
                 }
                 insertChild(nodeFound, child!!)
-
             }
+            print("Time taken = ${ System.currentTimeMillis() -start}")
         }
     }
 
@@ -112,6 +113,28 @@ class LinkedTreeClass() : LinkedTree<Any?> {
             print("Printing sibling =  ${nodeFound.parent?.leftNode?.value} ,Replacing ${nodeFound.value} with ${child.value}" +
                     " ...checking child node leftnode = ${child.leftNode?.value} ...child right node  =  ${child.rightNode?.value}....updated node:  ${nodeFound.parent?.rightNode?.value}")
         }
+    }
+
+    override fun minVal(): Int {
+        var node = root
+        if(node?.leftNode!= null && root != null)
+        {
+            node  = node?.leftNode
+        }
+        return node?.value!!
+    }
+
+    override fun maxVal(): Int {
+        var node = root
+        if(node!= null && root != null)
+        {
+            node  = node.rightNode
+        }
+        return node?.value!!
+    }
+
+    override fun depth() {
+
     }
 
 

@@ -5,5 +5,8 @@ interface LinkedTree<T> {
     fun delete(any :T)
     fun search(key:Int,node:Node?):Node?
     fun traverse( node: Node?):Unit
+    fun minVal():Int
+    fun maxVal():Int
+    fun depth()
 
 }
